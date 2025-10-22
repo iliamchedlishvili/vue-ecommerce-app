@@ -8,7 +8,7 @@
   </header>
 
   <main>
-    
+    <button>Click</button>
   </main>
 </template>
 
