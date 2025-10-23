@@ -10,7 +10,7 @@ const categories = ref([
 <template>
     <div class="d-grid gap-2">
         <button class="btn btn-outline-primary" type="button">Home</button>
-        <button v-for="category in categories" class="btn btn-outline-primary" type="button" :key="product.id">
+        <button v-for="category in categories" class="btn btn-outline-primary" type="button" :key="category.id">
             {{ category.name }}
         </button>
     </div>
