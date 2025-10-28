@@ -5,6 +5,7 @@ import Dialog from 'primevue/dialog'
 import Button from 'primevue/button'
 import InputText from 'primevue/inputtext';
 import { ref } from 'vue'
+import ProductDetails from './ProductDetails.vue';
 
 const visible = ref(false);
 
@@ -36,7 +37,7 @@ function submitForm() {
 
 </script>
 <template>
-     <div style="margin-top:20px;">
+    <div style="margin-top:20px;">
         <Button label="New" icon="pi pi-external-link" @click="visible = true" />
     </div>
     <div class="card" style="margin-top: 30px;">
@@ -47,6 +48,9 @@ function submitForm() {
             <Column field="description" header="Description"></Column>
             <Column field="price" header="Price"></Column>
         </DataTable>
+    </div>
+    <div>
+        <ProductDetails></ProductDetails>
     </div>
 </template>
 <style scoped></style>
