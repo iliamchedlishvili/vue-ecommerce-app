@@ -1,47 +1,53 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "../components/customer/Home.vue";
-import Products from "@/components/admin/products/Products.vue";
-import Orders from "@/components/admin/orders/Orders.vue";
-import UsersManage from "@/components/admin/users/UsersManage.vue";
-import Admin from "@/components/admin/Admin.vue";
-import AdminHome from "@/components/admin/home/AdminHome.vue";
-import EmpLogin from "@/components/admin/login/EmpLogin.vue";
 
 const routes = [
-  { path: "/", name: "Default", component: Home },
-  { path: "/home", name: "Home", component: Home },
   {
-    path: "/admin", name: "Admin", component: Admin,
+    path: "/",
+    name: "Default",
+    component: () => import("../components/customer/Home.vue")
+  },
+  {
+    path: "/home",
+    name: "Home",
+    component: () => import("../components/customer/Home.vue")
+  },
+  {
+    path: '/cart',
+    name: 'cart',
+    component: () => import('../components/customer/cart/CartDetail.vue'),
+  },
+  {
+    path: "/admin", name: "Admin", component: () => import("../components/admin/Admin.vue"),
     children: [
       {
         path: 'products',
         name: 'AdminProducts',
-        component: Products,
+        component: () => import('../components/admin/products/Products.vue'),
       },
       {
         path: 'orders',
         name: 'orders',
-        component: Orders,
+        component: () => import('../components/admin/orders/Orders.vue'),
       },
       {
         path: 'usersmanage',
         name: 'usersmanage',
-        component: UsersManage,
-      },      
+        component: () => import('../components/admin/users/UsersManage.vue'),
+      },
       {
         path: 'home',
         name: 'home',
-        component: AdminHome,
+        component: () => import('../components/admin/home/AdminHome.vue'),
       },
       {
         path: '',
         name: 'default',
-        component: EmpLogin,
+        component: () => import('../components/admin/home/AdminHome.vue'),
       },
       {
         path: 'login',
         name: 'login',
-        component: EmpLogin,
+        component: () => import('../components/admin/login/EmpLogin.vue'),
       }
     ],
   },
