@@ -20,8 +20,9 @@ git add .                   # this command stages files to commit
 git status                  # check status modified files 
 git commit -m 'comment'     # saves only staged changes to repository locally
 git push                    # send commits to the remote repository
-git fetch                   # Downloads changes only
-git pull                    # Downloads + merges
+git fetch                   # Downloads but not merges automatically. do not change your local branch. you must merge manually git merge origin/main
+                            # use fetch when you want to see what's changed before merging
+git pull                    # Downloads + merges automatically. it is two command in one git fetch and git merge
 
 # With Branches
 
