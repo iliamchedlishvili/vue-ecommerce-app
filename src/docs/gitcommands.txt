@@ -9,19 +9,32 @@ git fetch                   // Downloads changes only
 git pull                    // Downloads + merges
 
 // With Branches
-//Start a new feature (always from latest master)
-git checkout main                     // switch to master
-git pull                                // get latest changes from remote
-git checkout -b feature/my-new-branch   // create & switch to feature branch
-git checkout feature/my-new-branch          // if branch already exists
 
-//After completed developint features
+# 1) Start from latest main
+git checkout main                     # switch to main
+git pull                              # get latest changes from remote
+
+# 2) Create feature branch
+git checkout -b feature/my-new-branch # create & switch to feature branch
+# (no need for: git checkout feature/my-new-branch – you’re already on it)
+
+# 3) Do your work, then commit
 git add .
-git commit -m "comment"  
+git commit -m "comment"
 
-// Push branch
+# 4) Push feature branch (first time)
 git push -u origin feature/my-new-branch
+# Next times you can just: git push
 
+# 5) Go back to main and update it
 git checkout main
+git pull                              # important: main may have new changes
+
+# 6) Merge feature into main (locally)
 git merge feature/my-new-branch
+
+# 7) Push updated main to remote
 git push
+
+git branch -d feature/my-new-branch          # delete local branch
+git push origin --delete feature/my-new-branch   # delete remote branch
