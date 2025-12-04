@@ -1,3 +1,19 @@
+#
+    Git Always works with local copies and remote copies of branches.
+
+    local copies of breanches are 
+    main
+    feature/my-branch
+
+    remote branches are
+    origin/main
+    origin/feature/my-branch
+
+    branch naming practices
+    feature/new-branch-name   new features
+    bugfix/new-branch-name    fixing bugs
+
+#
 
 # Simple Flow Without Branches
 git add .                   # this command stages files to commit
