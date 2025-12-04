@@ -35,5 +35,6 @@ git merge feature/my-new-branch
 # 7) Push updated main to remote
 git push
 
+# 8) Optional CleanUp
 git branch -d feature/my-new-branch          # delete local branch
 git push origin --delete feature/my-new-branch   # delete remote branch
