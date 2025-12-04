@@ -10,7 +10,7 @@ git pull                    // Downloads + merges
 
 // With Branches
 //Start a new feature (always from latest master)
-git checkout master                     // switch to master
+git checkout main                     // switch to master
 git pull                                // get latest changes from remote
 git checkout -b feature/my-new-branch   // create & switch to feature branch
 
