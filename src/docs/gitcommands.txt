@@ -1,14 +1,13 @@
-// Git commands flow
 
-// Simple Flow Without Branches
-git add .                   // this command stages files to commit
-git status                  // check status modified files 
-git commit -m 'comment'     // saves only staged changes to repository locally
-git push                    // send commits to the remote repository
-git fetch                   // Downloads changes only
-git pull                    // Downloads + merges
+# Simple Flow Without Branches
+git add .                   # this command stages files to commit
+git status                  # check status modified files 
+git commit -m 'comment'     # saves only staged changes to repository locally
+git push                    # send commits to the remote repository
+git fetch                   # Downloads changes only
+git pull                    # Downloads + merges
 
-// With Branches
+# With Branches
 
 # 1) Start from latest main
 git checkout main                     # switch to main
