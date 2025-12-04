@@ -19,5 +19,9 @@ git checkout feature/my-new-branch          // if branch already exists
 git add .
 git commit -m "comment"  
 
-// Push branch (first time only)
+// Push branch
 git push -u origin feature/my-new-branch
+
+git checkout main
+git merge feature/my-new-branch
+git push
