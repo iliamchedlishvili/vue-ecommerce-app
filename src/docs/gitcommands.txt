@@ -1,5 +1,6 @@
 // Git commands flow
 
+// Simple Flow Without Branches
 git add .                   // this command stages files to commit
 git status                  // check status modified files 
 git commit -m 'comment'     // saves only staged changes to repository locally
@@ -7,23 +8,15 @@ git push                    // send commits to the remote repository
 git fetch                   // Downloads changes only
 git pull                    // Downloads + merges
 
-// branches
+// With Branches
+//Start a new feature (always from latest master)
+git checkout master                     // switch to master
+git pull                                // get latest changes from remote
+git checkout -b feature/my-new-branch   // create & switch to feature branch
 
-//Feature branch work
-git checkout -b feature/my-new-branch       //* create new branch
-git checkout feature/my-new-branch          // if branch already exists
-git add .                                   //*
-git commit -m "Your commit message"         //*
-git push -u origin feature/my-new-branch    //* push branch to master
+//After completed developint features
+git add .
+git commit -m "comment"  
 
-// Merge into master
-git checkout master                         //* Switch to master (or main) before merging
-git pull                                    //* Pull the latest changes to avoid conflicts:
-git merge feature/my-new-branch             //* Merge your branch into master
-
-// if conflict occurs Manually fix the conflicts in files and then run this commands 
-git add .                                   // this steps is required if there is a conflict
-git commit -m 'comment'                     // this steps is required if there is a conflict
-
-// last push changes to master
-git push                                    //* send commits to the remote repository
+// Push branch (first time only)
+git push -u origin feature/my-new-branch
