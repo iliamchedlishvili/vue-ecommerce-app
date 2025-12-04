@@ -13,6 +13,7 @@ git pull                    // Downloads + merges
 git checkout main                     // switch to master
 git pull                                // get latest changes from remote
 git checkout -b feature/my-new-branch   // create & switch to feature branch
+git checkout feature/my-new-branch          // if branch already exists
 
 //After completed developint features
 git add .
