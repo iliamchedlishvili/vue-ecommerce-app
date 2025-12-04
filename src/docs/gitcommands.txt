@@ -15,7 +15,7 @@ git pull                              # get latest changes from remote
 
 # 2) Create feature branch
 git checkout -b feature/my-new-branch # create & switch to feature branch
-# (no need for: git checkout feature/my-new-branch – you’re already on it)
+git checkout feature/my-new-branch  # if already exists
 
 # 3) Do your work, then commit
 git add .
