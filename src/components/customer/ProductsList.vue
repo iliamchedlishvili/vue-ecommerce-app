@@ -9,6 +9,9 @@ const products = ref([
     { id: 5, name: 'Product E', price: 300, description: "Product E Description" },
     { id: 6, name: 'Product F', price: 350, description: "Product F Description" },
     { id: 7, name: 'Product G', price: 400, description: "Product G Description" },
+    { id: 8, name: 'Product H', price: 450, description: "Product H Description" },
+    { id: 9, name: 'Product I', price: 500, description: "Product I Description" },
+    { id: 10, name: 'Product J', price: 550, description: "Product J Description" },
 ])
 </script>
 <template>
