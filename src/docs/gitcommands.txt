@@ -55,3 +55,31 @@ git push
 # 8) Optional CleanUp
 git branch -d feature/my-new-branch          # delete local branch
 git push origin --delete feature/my-new-branch   # delete remote branch
+
+# Pull Request Workflow
+
+# Start from the latest main
+git checkout main
+git pull        # update your local main
+
+# Create a feature branch
+git checkout -b feature/my-new-branch
+
+# If the branch already exists locally
+git checkout feature/my-new-branch
+
+# Do your work → add & commit
+git add .
+git commit -m "comment"
+
+#Push feature branch (first time)
+git push -u origin feature/my-new-branch
+
+Now switch to GitHub (browser)
+Open a Pull Request
+Go to your repo on GitHub
+GitHub will show a yellow banner:
+“Compare & Pull Request”
+Click it
+Add a title + description
+Submit the PR
