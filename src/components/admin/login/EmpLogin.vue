@@ -21,7 +21,7 @@ const login = async () => {
 
         console.log('Login successful:', response.data);
         localStorage.setItem('token', response.data.token); //store token
-        router.push('/');
+        router.push('/admin');
 
     } catch (err) {
         if (err.response && err.response.data && err.response.data.message) {
