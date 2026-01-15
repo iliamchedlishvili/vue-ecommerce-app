@@ -21,29 +21,31 @@ const routes = [
     path: "/admin", name: "Admin", component: () => import("../components/admin/Admin.vue"),
     children: [
       {
-        path: 'products',
-        name: 'AdminProducts',
-        component: () => import('../components/admin/products/Products.vue'),
-      },
-      {
-        path: 'orders',
-        name: 'orders',
-        component: () => import('../components/admin/orders/Orders.vue'),
-      },
-      {
-        path: 'usersmanage',
-        name: 'usersmanage',
-        component: () => import('../components/admin/users/UsersManage.vue'),
-      },
-      {
         path: 'home',
         name: 'home',
         component: () => import('../components/admin/home/AdminHome.vue'),
-      },
-      {
-        path: '',
-        name: 'default',
-        component: () => import('../components/admin/home/AdminHome.vue'),
+        children: [
+          {
+            path: '',
+            name: 'Dashboard',
+            component: () => import('../components/admin/dashboard/Dashboard.vue'),
+          },
+          {
+            path: 'products',
+            name: 'AdminProducts',
+            component: () => import('../components/admin/products/Products.vue'),
+          },
+          {
+            path: 'orders',
+            name: 'orders',
+            component: () => import('../components/admin/orders/Orders.vue'),
+          },
+          {
+            path: 'usersmanage',
+            name: 'usersmanage',
+            component: () => import('../components/admin/users/UsersManage.vue'),
+          },
+        ]
       },
       {
         path: 'login',

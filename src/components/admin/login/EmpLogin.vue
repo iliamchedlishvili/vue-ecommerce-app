@@ -8,8 +8,11 @@ const password = ref('');
 const error = ref(null);
 const loading = ref(false);
 const router = useRouter();
+const errorText = ref("")
 
 const login = async () => {
+
+    errorText.value = "";
     loading.value = true;
     error.value = null;
 
@@ -21,13 +24,13 @@ const login = async () => {
 
         console.log('Login successful:', response.data);
         localStorage.setItem('token', response.data.token); //store token
-        router.push('/admin');
+        router.push('/admin/home'); //redirect to admin home
 
     } catch (err) {
         if (err.response && err.response.data && err.response.data.message) {
             error.value = err.response.data.message;
         } else {
-            error.value = 'Login failed. Please check your credentials.';
+            errorText.value = 'Login failed. Please check your credentials.';
         }
         console.error('Login error:', err);
     } finally {
@@ -51,6 +54,9 @@ const login = async () => {
                     <button class="btn btn-primary m-1" type="submit">
                         Log In
                     </button>
+                </div>
+                <div>
+                    <label class="text-danger">{{ errorText }}</label>
                 </div>
             </div>
         </form>
